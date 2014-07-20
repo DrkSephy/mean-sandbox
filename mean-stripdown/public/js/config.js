@@ -2,6 +2,10 @@
 window.app.config(['$routeProvider', function($routeProvider) {
 	$routeProvider
 	.when('/', { templateUrl: 'views/index.html' })
+    .when('/nflteams', { templateUrl: 'views/nfl/list.html' })
+    // The string value in this URL will be available as $routeParams['nflTeamId']
+    // in the controller once $routeParams is injected.
+    .when('/nflteams/:nflTeamId', { templateUrl: 'views/nfl/views.html' })
 	.otherwise({redirectTo: '/'});
 }]);
 

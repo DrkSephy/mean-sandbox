@@ -1,3 +1,12 @@
+<!--
+When rendering this template, if the user has authenticated, 
+the user object is interpolated into the view. When passed to 
+the client, the user object is attached to the window object,
+and is now available to your JavaScript as window.user. When
+the user is not authenticated, the window.user object will 
+be null, and everything will still work.    
+-->
+
 extends layouts/default
 
 block content

@@ -43,3 +43,14 @@ exports.update = function(req, res){
         res.jsonp(league)
     })
 }
+
+exports.destroy = function(req, res){
+    var league = req.league
+    league.remove(function(err){
+        if (err){
+            res.render('error', {status: 500});
+        } else {
+            res.jsonp(1);
+        }
+    })
+}

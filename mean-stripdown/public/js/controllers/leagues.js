@@ -33,4 +33,13 @@ window.angular.module('ngff.controllers.leagues', [])
             $location.path('leagues/' + league._id);
             });
         };
+
+        $scope.destroy = function (league) {
+            league.$remove();
+            for (var i in $scope.leagues) {
+                if ($scope.leagues[i] == league) {
+                    $scope.leagues.splice(i, 1)
+                }
+            }
+        };
 }]);

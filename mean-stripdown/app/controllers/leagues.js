@@ -34,3 +34,12 @@ exports.all = function(req, res){
         }
     });
 }
+
+exports.update = function(req, res){
+    var league = req.league
+    league = _.extend(league, req.body)
+
+    league.save(function(err){
+        res.jsonp(league)
+    })
+}

@@ -20,4 +20,10 @@ window.angular.module('ngff.controllers.leagues', [])
             $scope.leagues = leagues;
             });
         };
+
+        $scope.findOne = function () {
+            Leagues.get({ leagueId: $routeParams.leagueId }, function (league) {
+            $scope.league = league;
+            });
+        };
 }]);

@@ -26,4 +26,11 @@ window.angular.module('ngff.controllers.leagues', [])
             $scope.league = league;
             });
         };
+
+        $scope.update = function () {
+            var league = $scope.league;
+            league.$update(function () {
+            $location.path('leagues/' + league._id);
+            });
+        };
 }]);

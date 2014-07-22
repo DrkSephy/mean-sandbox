@@ -24,3 +24,13 @@ exports.league = function(req, res, next, id){
         next();
     })
 }
+
+exports.all = function(req, res){
+    League.find().populate('commissioner').exec(function(err, leagues){
+        if (err) {
+            res.render('error', {status: 500});
+        } else {
+            res.jsonp(leagues);
+        }
+    });
+}

@@ -9,3 +9,7 @@ exports.create = function(req, res){
     league.save();
     res.jsonp(league);
 }
+
+exports.show = function(req, res){
+    res.jsonp(req.league);
+}

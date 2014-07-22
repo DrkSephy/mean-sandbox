@@ -14,4 +14,10 @@ window.angular.module('ngff.controllers.leagues', [])
          
             this.league.name = "";
         };
+
+        $scope.find = function (query) {
+            Leagues.query(query, function (leagues) {
+            $scope.leagues = leagues;
+            });
+        };
 }]);

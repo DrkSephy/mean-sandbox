@@ -6,7 +6,11 @@ window.app.config(['$routeProvider', function($routeProvider) {
     // The string value in this URL will be available as $routeParams['nflTeamId']
     // in the controller once $routeParams is injected.
     .when('/nflteams/:nflTeamId', { templateUrl: 'views/nfl/views.html' })
-	.otherwise({redirectTo: '/'});
+	.when('/leagues', {templateUrl: 'views/leagues/list.html'})
+    .when('/leagues/create', {templateUrl: 'views/leagues/create.html'})
+    .when('/leagues/:leagueId/edit', {templateUrl: 'views/leagues/edit.html'})
+    .when('/leagues/:leagueId', {templateUrl: 'views/leagues/view.html'})
+    .otherwise({redirectTo: '/'});
 }]);
 
 //Removing tomcat unspported headers

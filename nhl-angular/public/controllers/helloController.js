@@ -1,3 +1,6 @@
 nhlApp.controller('helloController', function($scope){
-    $scope.pageData = 'Hello World';
+    $scope.pageData = {};
+    $scope.pageData = helloFactory.get().success(function(data){
+        $scope.pageData = data;
+    });
 });

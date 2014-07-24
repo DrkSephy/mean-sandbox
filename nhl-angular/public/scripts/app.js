@@ -1,3 +1,5 @@
+'use strict';
+
 var nhlApp = angular.module('nhlApp', [
     'ui.router'
 ])
@@ -7,8 +9,8 @@ var nhlApp = angular.module('nhlApp', [
             url: '/hello',
             templateUrl: 'partials/hello.partial.html',
             controller: 'helloController',
-            data:{
+            data: {
                 pageTitle: 'Hello'
             }
-        }); 
+        });
 });

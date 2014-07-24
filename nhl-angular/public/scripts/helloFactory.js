@@ -1,8 +1,10 @@
-nhlApp.factory('helloFactory', function($http){
+'use strict';
+
+nhlApp.factory('helloFactory', function($http) {
     return {
-        get: function(){
+        get: function() {
             return $http({
-                url: '/api/helloworld',
+                url: '/api/hello',
                 method: 'GET'
             });
         }
